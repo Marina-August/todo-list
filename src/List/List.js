@@ -17,9 +17,15 @@ const List =(props)=>{
     
     return(
         <div className='list'>
-         {props.data.map(el => 
-            <h2  key={el.id} onClick={() => deleteHandler(el.id)}>{el.text}</h2>)}      
+            <div >
+               <h3>To delete an item click on it!</h3>
+            </div>
+            <div >
+               {props.data.map(el => 
+               <div className='item' key={el.id} onClick={() => deleteHandler(el.id)}>{el.text}</div>)}      
+            </div>
         </div>
+        
     )
 }
 
