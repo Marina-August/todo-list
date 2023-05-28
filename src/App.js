@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import Form from './Form/Form';
 import './App.css';
+import List from './List/List';
+import React, { useState } from 'react';
 
-function App() {
+
+let count = 0;
+
+const App = () => {
+  const [list, setList] = useState([]);
+
+  const saveDataHandler =(enteredText)=>{
+    setList (prevList => [...prevList, enteredText])
+  }
+  
+
+  const deleteHandler =(deleteId)=>{
+    const copiedList = list.filter(el => el.id !== deleteId )
+    setList (copiedList);
+  }
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Form onSaveData = {saveDataHandler}/>
+        <List data ={list} onDeleteLine ={deleteHandler}/>
     </div>
-  );
+  )
 }
 
 export default App;

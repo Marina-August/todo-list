@@ -1,0 +1,43 @@
+.form{
+    background-image: linear-gradient(to right, rgb(187, 241, 202) , rgb(181, 181, 137));
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+ 
+ button{
+    font: 'Merriweather', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #437e44;
+    background-image: linear-gradient(to right, rgb(79, 118, 79), rgb(102, 180, 102));
+    color: white;
+    border-radius: 12px;
+    height: 3rem;
+    width: 7rem;
+ }
+
+ .button{
+   margin-top: 1.5rem;
+ }
+
+ textarea {
+    width: 25rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    resize: none;
+ }
+
+ .label{
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.7rem;
+    font-family: 'Merriweather', serif;
+    background: -webkit-linear-gradient(rgb(66, 99, 66), rgb(81, 146, 81));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
