@@ -1,14 +1,15 @@
 import './Form.css'
 import React, { useState } from 'react';
+import Error from '../ErrorModal/Error';
 
 let count = 0;
 const Form = (props)=>{
-    const [valid, setvalid] =useState(true);
-
+    const [valid, setValid] =useState(true);
     const [enteredText, setEnteredText] = useState ('');
+
     const textChangeHandler = (event)=>{
         if (event.target.value.trim().length > 0){
-            setvalid(true);
+            setValid(true);
         }
         setEnteredText (event.target.value);
     }
@@ -17,7 +18,7 @@ const Form = (props)=>{
         event.preventDefault();
         const text = enteredText;
         if (text.trim().length === 0){
-            setvalid(false);
+            setValid(false);
             return;
         }
         setEnteredText ('');
@@ -29,21 +30,26 @@ const Form = (props)=>{
         console.log (newLine);
     }
 
+    const errorHandler = ()=>{
+        setValid(true);
+    }
+
     
     return(
+        <div>
+        {!valid && <Error title ={'An Error occured'} message = {'Text can not be empty'} onConfirm= {errorHandler}/>}
         <form onSubmit ={submitHandler} className='form'>
             <div className='label'>
                 <label>To do today:</label>
             </div>   
             <div>
-                <textarea value={enteredText} onChange={textChangeHandler}
-                 className={`${!valid? 'invalid':''}`}> </textarea>
+                <textarea value={enteredText} onChange={textChangeHandler}> </textarea>
             </div> 
-            <div  className={`${!valid? 'invalid-text':''}`}>{!valid && 'The text can not be empty'}</div>   
             <div className = 'button'>
                 <button type="submit">Add Goal</button>       
             </div>
          </form> 
+         </div>
     )
 }
 

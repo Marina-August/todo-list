@@ -1,0 +1,36 @@
+.error{
+    font-size: 1.2rem;
+    font-family: 'Merriweather', serif;
+    color: rgb(28, 107, 28);  
+    position: fixed;
+    background-image: linear-gradient(to right, rgb(187, 241, 202) , rgb(181, 181, 137));
+    background-color: white;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 40%;
+    left: 30%;
+    top: 20%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    overflow: hidden;
+    height: 25%;
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .error-button{
+    margin-top: 2rem;
+  }
+
+  
+  
