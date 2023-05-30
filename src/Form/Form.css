@@ -41,3 +41,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
  }
+
+ .invalid{
+   background-color: rgb(250, 7, 7);
+   opacity: 0.5;
+   border-color: rgb(191, 15, 15);
+   border-width: 0.3rem;
+ }
+
+ .invalid-text{
+   color: red;
+   font-size: 1.5rem;
+   text-shadow: -1px 0 rgb(129, 82, 82), 0 1px rgb(176, 96, 96), 1px 0 rgb(175, 109, 109), 0 -1px rgb(168, 80, 80);
+   font-family: 'Merriweather', serif;
+ }
