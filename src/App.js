@@ -21,10 +21,10 @@ const App = () => {
   
   
   return (
-    <div>
+    <>
         <Form onSaveData = {saveDataHandler}/>
         <List data ={list} onDeleteLine ={deleteHandler}/>
-    </div>
+    </>
   )
 }
 
