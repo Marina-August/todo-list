@@ -1,13 +1,17 @@
 import './Form.css'
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Error from '../ErrorModal/Error';
 
 let count = 0;
 const Form = (props)=>{
+    const enteredInfoRef = useRef();
+   
     const [valid, setValid] =useState(true);
     const [enteredText, setEnteredText] = useState ('');
 
     const textChangeHandler = (event)=>{
+         console.log (enteredInfoRef.current.value);
+        //  const enteredString = enteredInfoRef.current.value;
         if (event.target.value.trim().length > 0){
             setValid(true);
         }
@@ -43,7 +47,7 @@ const Form = (props)=>{
                 <label>To do today:</label>
             </div>   
             <div>
-                <textarea value={enteredText} onChange={textChangeHandler}> </textarea>
+                <textarea value={enteredText} onChange={textChangeHandler} ref ={enteredInfoRef}> </textarea>
             </div> 
             <div className = 'button'>
                 <button type="submit">Add Goal</button>       
