@@ -2,7 +2,6 @@ import './Form.css'
 import React, { useState, useRef } from 'react';
 import Error from '../ErrorModal/Error';
 
-let count = 0;
 const Form = (props)=>{
     const enteredInfoRef = useRef();
    
@@ -11,7 +10,6 @@ const Form = (props)=>{
 
     const textChangeHandler = (event)=>{
          console.log (enteredInfoRef.current.value);
-        //  const enteredString = enteredInfoRef.current.value;
         if (event.target.value.trim().length > 0){
             setValid(true);
         }
@@ -28,7 +26,7 @@ const Form = (props)=>{
         setEnteredText ('');
         const newLine = {
             text: text,
-            id: ++count,
+            id: props.countId,
             complete: false
            }
         props.onSaveData(newLine);

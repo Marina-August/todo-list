@@ -6,16 +6,28 @@ import React, { useState, useEffect } from 'react';
 
 const App = () => {
   const [list, setList] = useState([]);
+  const [count, setCount] = useState (0);
 
   useEffect(() => {
     const userInformation = localStorage.getItem('info');
     if (userInformation) { 
-      setList (JSON.parse(userInformation));
+      const listFromStorage = JSON.parse(userInformation);
+      let max = 0;
+      for (let i = 0; i < listFromStorage.length; i++){
+           if (max < listFromStorage[i].id){
+            max = listFromStorage[i].id;
+           }
+      }
+      setCount(++max);
+      console.log(listFromStorage);
+      setList (listFromStorage);
     }
   }, []);
 
   const saveDataHandler =(enteredText)=>{
     setList (prevList => [...prevList, enteredText]);
+    let prevCount = count;
+    setCount(++prevCount);
     localStorage.setItem('info', JSON.stringify([...list, enteredText]));
   }
   
@@ -43,7 +55,7 @@ const App = () => {
   
   return (
     <>
-        <Form onSaveData = {saveDataHandler}/>
+        <Form onSaveData = {saveDataHandler} countId = {count}/>
         <List data ={list} onDeleteLine ={deleteHandler} onCompleteLine={crossHandler}/>
     </>
   )
