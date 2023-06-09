@@ -14,6 +14,11 @@
         text-align: center;
     }
 
+    .item-delete{
+        display: flex;
+        width: 50rem;
+    }
+
     .item{
         margin-bottom: 1.5rem;
         background-image: linear-gradient(to right, rgb(187, 241, 202) , rgb(181, 181, 137));
@@ -21,5 +26,20 @@
         border-radius: 9px;
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25); 
         font-size: 2.4rem;
+        width: 43rem;
+        text-align: left;
+    }
+
+    .delete{
+        margin-left: 2rem;
+        width: 5rem;
+    }
+
+    span{
+        color:rgb(102, 102, 213);
+    }
+
+    s {
+        color:rgb(102, 102, 213) ;
     }
    

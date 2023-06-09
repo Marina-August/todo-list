@@ -28,7 +28,8 @@ const Form = (props)=>{
         setEnteredText ('');
         const newLine = {
             text: text,
-            id: ++count
+            id: ++count,
+            complete: false
            }
         props.onSaveData(newLine);
         console.log (newLine);
@@ -37,7 +38,6 @@ const Form = (props)=>{
     const errorHandler = ()=>{
         setValid(true);
     }
-
     
     return(
         <div>
@@ -47,7 +47,7 @@ const Form = (props)=>{
                 <label>To do today:</label>
             </div>   
             <div>
-                <textarea value={enteredText} onChange={textChangeHandler} ref ={enteredInfoRef}> </textarea>
+                <textarea  value={enteredText} onChange={textChangeHandler} ref ={enteredInfoRef}> </textarea>
             </div> 
             <div className = 'button'>
                 <button type="submit">Add Goal</button>       
